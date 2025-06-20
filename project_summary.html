@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixmos - 비회원 중심 픽셀 드로잉 커뮤니티 MVP</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .overview {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            margin-bottom: 30px;
+        }
+        .feature-list {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .feature-list ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .feature-list li {
+            margin: 8px 0;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tech-tag {
+            background: #007bff;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .file-structure {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }
+        .ui-concept {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .mvp-status {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
+        }
+        .concept-highlight {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .concept-highlight h2 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .print-button:hover {
+            background: #0056b3;
+        }
+        @media print {
+            .print-button {
+                display: none;
+            }
+            body {
+                background: white;
+                padding: 20px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">PDF 저장</button>
+    
+    <div class="container">
+        <h1>Pixmos - 비회원 중심 픽셀 드로잉 커뮤니티 MVP</h1>
+        
+        <div class="concept-highlight">
+            <h2>🎨 "여러 사용자가 점을 찍듯 자유롭게 그림을 공유하는 비회원 중심 플랫폼"</h2>
+        </div>
+        
+        <div class="overview">
+            <h2>📋 프로젝트 개요</h2>
+            <p><strong>Pixmos</strong>는 회원가입 없이 누구나 쉽게 픽셀 아트를 그리고 공유할 수 있는 비회원 중심 커뮤니티 서비스입니다. Windows 95 스타일의 복고풍 픽셀 감성 UI로 모바일 최적화된 드로잉 경험을 제공합니다.</p>
+        </div>
+
+        <h2>🎨 주요 기능 (비회원 기준)</h2>
+        
+        <h3>1. 픽셀 드로잉 도구 및 그리기 화면</h3>
+        <div class="feature-list">
+            <ul>
+                <li><strong>툴바</strong>:<br>
+                  - <b>Undo</b>(되돌리기), <b>Redo</b>(다시 실행)<br>
+                  - <b>지우개</b>, <b>펜</b>(기본 선택), <b>페인트</b>(연속된 영역 채우기)<br>
+                  - <b>컬러 팔레트</b>: 12개 색상, 최근 사용 색상 순서대로 자동 배치<br>
+                  - <b>색 지정</b>: 팔레트에서 선택한 색상은 왼쪽부터 차례로 쌓임
+                </li>
+                <li><strong>캔버스</strong>:<br>
+                  - 24x24 격자, 최대 가로폭 390px(모바일 기준), 각 셀은 정사각형<br>
+                  - 실시간 미리보기, 터치/드래그로 그리기 지원
+                </li>
+                <li><strong>저장 팝업(바텀시트)</strong>:<br>
+                  - 저장 시 하단에 팝업 등장, 저장/취소 등 액션 제공
+                </li>
+            </ul>
+        </div>
+
+        <h3>2. 홈 피드(커뮤니티) 기능</h3>
+        <div class="feature-list">
+            <ul>
+                <li><strong>홈 피드</strong>: 모든 사용자의 그림(썸네일), 닉네임, 글, 날짜를 한눈에 볼 수 있는 메인 피면</li>
+                <li><strong>좋아요(스크랩)</strong>: 마음에 드는 작품을 저장/스크랩</li>
+                <li><strong>댓글</strong>: 각 그림별로 댓글 작성 및 소통</li>
+                <li><strong>신고</strong>: 부적절한 콘텐츠 신고</li>
+                <li><strong>정렬/필터</strong>: 최신순, 인기순 등 정렬 지원(예정)</li>
+                <li><strong>간편 게시</strong>: 닉네임, 글, 비밀번호만 입력하면 게시</li>
+                <li><strong>비밀번호 보안</strong>: 비밀번호로 수정/삭제 권한 관리</li>
+                <li><strong>썸네일 자동 생성</strong>: 드로잉 결과물 자동 썸네일화</li>
+            </ul>
+        </div>
+
+        <h2>🛠️ 기술 스택</h2>
+        <div class="tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript (Vanilla)</span>
+            <span class="tech-tag">Canvas API</span>
+            <span class="tech-tag">IndexedDB</span>
+            <span class="tech-tag">PWA</span>
+            <span class="tech-tag">Responsive Design</span>
+        </div>
+
+        <h2>🎨 UI/UX 컨셉</h2>
+        <div class="ui-concept">
+            <h3>복고풍 픽셀 감성 (Windows 95 스타일) + 모바일 최적화</h3>
+            <ul>
+                <li><strong>툴바</strong>: 상단에 아이콘 버튼(undo, redo, 지우개, 펜, 페인트, 컬러팔레트, 색 지정) 일렬 배치</li>
+                <li><strong>컬러 팔레트</strong>: 12개, 최근 사용 색상은 왼쪽부터 순차적으로 쌓임</li>
+                <li><strong>캔버스</strong>: 24x24 격자, 최대 390px, 명확한 픽셀 경계선</li>
+                <li><strong>저장 팝업(바텀시트)</strong>: 저장 시 하단에 등장, 직관적 액션 제공</li>
+                <li><strong>홈 피드</strong>: 카드형 썸네일, 닉네임, 글, 날짜, 좋아요, 댓글, 신고 버튼 등 커뮤니티형 UI</li>
+                <li><strong>폰트</strong>: 픽셀 폰트 또는 시스템 폰트</li>
+                <li><strong>버튼 스타일</strong>: 입체감 있는 3D 버튼 효과</li>
+                <li><strong>반응형</strong>: 모바일 기준, 터치/드래그 지원</li>
+            </ul>
+        </div>
+
+        <h2>📁 예상 파일 구조</h2>
+        <div class="file-structure">
+pixmos/
+├── index.html          # 메인 홈 피드(=갤러리)
+├── draw.html           # 드로잉 페이지
+├── css/
+│   ├── main.css        # 공통 스타일
+│   ├── draw.css        # 드로잉 페이지 스타일
+│   └── retro.css       # Windows 95 스타일
+├── js/
+│   ├── app.js          # 메인 애플리케이션 로직
+│   ├── draw.js         # 드로잉 기능
+│   ├── feed.js         # 홈 피드(갤러리) 관리
+│   └── db.js           # IndexedDB 관리
+├── assets/
+│   ├── icons/          # 픽셀 아이콘들
+│   └── fonts/          # 픽셀 폰트
+└── manifest.json       # PWA 매니페스트
+        </div>
+
+        <h2>🚀 MVP 구현 상태</h2>
+        <div class="mvp-status">
+            <strong>✅ 핵심 기능:</strong>
+            <ul>
+                <li>24x24 픽셀 드로잉 캔버스(최대 390px, 모바일 기준)</li>
+                <li>툴바(undo/redo/지우개/펜/페인트/컬러팔레트/색 지정)</li>
+                <li>비회원 게시 시스템 (닉네임 + 비밀번호)</li>
+                <li>홈 피드(=갤러리): 썸네일, 닉네임, 글, 날짜, 좋아요, 댓글, 신고</li>
+                <li>Windows 95 스타일 UI</li>
+                <li>모바일 반응형 디자인</li>
+            </ul>
+        </div>
+        
+        <div class="feature-list">
+            <strong>🔄 추가 예정 기능:</strong>
+            <ul>
+                <li>정렬/필터(최신순, 인기순 등)</li>
+                <li>PWA 설치 지원</li>
+                <li>오프라인 드로잉</li>
+            </ul>
+        </div>
+
+        <div class="overview">
+            <h2>💡 서비스 핵심 가치</h2>
+            <p><strong>Pixmos</strong>는 "점을 찍듯 자유롭게"라는 컨셉으로, 누구나 쉽게 접근할 수 있는 픽셀 아트 커뮤니티를 지향합니다. 회원가입의 번거로움 없이 즉시 창작을 시작할 수 있고, Windows 95의 복고풍 감성으로 따뜻한 커뮤니티 분위기를 조성합니다.</p>
+        </div>
+    </div>
+
+    <script>
+        // PDF 저장 버튼 클릭 시
+        document.querySelector('.print-button').addEventListener('click', function() {
+            window.print();
+        });
+    </script>
+</body>
+</html> 

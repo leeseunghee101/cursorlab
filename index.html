@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pixel Art Drawing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="pixel-app-container">
+    <!-- 상단바 -->
+    <header class="pixel-topbar">
+      <button class="pixel-back-btn" aria-label="뒤로가기">
+        <img src="assets/icons/TOP_back.svg" alt="뒤로가기" />
+      </button>
+      <button class="pixel-save-btn">Save</button>
+    </header>
+
+    <!-- 툴바 -->
+    <nav class="pixel-toolbar">
+      <div class="pixel-util-toolbar">
+        <div class="pixel-tool-group">
+          <button class="pixel-tool" id="undo" title="되돌리기">
+            <img src="assets/icons/dot_undo.svg" alt="되돌리기" />
+          </button>
+          <button class="pixel-tool" id="redo" title="다시 실행">
+            <img src="assets/icons/dot_redo.svg" alt="다시 실행" />
+          </button>
+          <button class="pixel-tool" id="palette" title="색상 선택">
+            <img src="assets/icons/dot_color.svg" alt="색상 선택" />
+          </button>
+          <button class="pixel-tool" id="pen" title="펜">
+            <span class="pixel-tool-selected-bg"></span>
+            <img src="assets/icons/dot_pen.svg" alt="펜" />
+          </button>
+          <button class="pixel-tool" id="paint" title="페인트">
+            <span class="pixel-tool-selected-bg"></span>
+            <img src="assets/icons/dot_paint.svg" alt="페인트" />
+          </button>
+          <button class="pixel-tool" id="eraser" title="지우개">
+            <span class="pixel-tool-selected-bg"></span>
+            <img src="assets/icons/dot_eraser.svg" alt="지우개" />
+          </button>
+          <button class="pixel-tool" id="line" title="라인">
+            <span class="pixel-tool-selected-bg"></span>
+            <img src="assets/icons/dot_line.svg" alt="dot_line" />
+          </button>
+        </div>
+      </div>
+      <div class="pixel-color-palette-box">
+        <div class="pixel-color-palette">
+          <!-- 12개 색상 버튼 (예시) -->
+          <button style="background:#4CAF50"></button>
+          <button style="background:#8BC34A"></button>
+          <button style="background:#CDDC39"></button>
+          <button style="background:#FFF9C4"></button>
+          <button style="background:#FFEB3B"></button>
+          <button style="background:#FFC107"></button>
+          <button style="background:#FF9800"></button>
+          <button style="background:#FF5722"></button>
+          <button style="background:#795548"></button>
+          <button style="background:#9E9E9E"></button>
+          <button style="background:#607D8B"></button>
+          <button style="background:#FFFFFF; border:1px solid #ccc"></button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 캔버스 -->
+    <main class="pixel-canvas-area">
+      <canvas id="pixelCanvas" width="360" height="360"></canvas>
+    </main>
+  </div>
+  <!-- 팔레트 팝업 (body 바로 아래) -->
+  <div id="pixel-palette-popup" class="pixel-palette-popup" style="display:none;">
+    <div class="palette-popup-content">
+      <button id="palette-popup-confirm" class="palette-popup-confirm">확인</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
